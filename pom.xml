@@ -9,9 +9,10 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <sonar.projectKey>javaprojectreachability101</sonar.projectKey>
+        <sonar.organization>javaprojectreachability101</sonar.organization>
+        <sonar.projectKey>javaprojectreachability101_java-sonar-project</sonar.projectKey>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.login>ba39305e23fbdf62fbc611c8de3b974523f9e7f3</sonar.login>
+        <sonar.login>3a01b83e9c5b1bb5287fa92a9b032679a729b19d</sonar.login>
         <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
     <dependencies>
