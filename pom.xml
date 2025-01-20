@@ -9,6 +9,10 @@
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <sonar.projectKey>javaprojectreachability101</sonar.projectKey>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>ba39305e23fbdf62fbc611c8de3b974523f9e7f3</sonar.login>
+        <sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     </properties>
     <dependencies>
         <dependency>
@@ -21,52 +25,44 @@
             <artifactId>nd4j-common</artifactId>
             <version>1.0.0-beta2</version>
         </dependency>
-
-<!--#Change 1 - Changes for Unit Test Coverage Percentage Update on SonarCloud Dashboard
-#By ASecurityGuru
-#5/11/2022 11:14 AM IST
-#Default Location of CodeCoverage File is target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
--->
-<dependency>
-    <groupId>junit</groupId>
-    <artifactId>junit</artifactId>
-    <version>4.12</version>
-    <scope>test</scope>
-</dependency>
-
-</dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
-
-<!--#Change 2 - Changes for Unit Test Coverage Percentage Update on SonarCloud Dashboard
-#By ASecurityGuru
-#5/11/2022 11:14 AM IST
-#Default Location of CodeCoverage File is target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
--->
             <plugin>
                 <groupId>org.jacoco</groupId>
-               <artifactId>jacoco-maven-plugin</artifactId>
+                <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.8.7</version>
                 <executions>
-                  <execution>
-                    <id>prepare-agent</id>
-                    <goals>
-                      <goal>prepare-agent</goal>
-                    </goals>
-                  </execution>
-                  <execution>
-                    <id>report</id>
-                    <goals>
-                      <goal>report</goal>
-                    </goals>
-                    <configuration>
-                      <formats>
-                        <format>XML</format>
-                      </formats>
-                    </configuration>
-                  </execution>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <formats>
+                                <format>XML</format>
+                            </formats>
+                        </configuration>
+                    </execution>
                 </executions>
-              </plugin>
-       </plugins>
-       </build>
+            </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>4.0.0.4121</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>
